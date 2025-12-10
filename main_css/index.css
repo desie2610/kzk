@@ -1,0 +1,55 @@
+*, *::before, *::after { box-sizing: border-box; }
+body{
+    margin:0;
+    font-family:Inter, sans-serif;
+    background: linear-gradient(180deg,#0d0d12,#131421,#0a0a0f);
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    overflow:hidden;
+  }
+
+  .menu-box{
+    width:420px;
+    padding:30px;
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:20px;
+    backdrop-filter: blur(6px);
+    box-shadow:0 0 25px rgba(255,145,0,0.3);
+    text-align:center;
+  }
+
+  h1{
+    margin:0 0 25px;
+    font-size:32px;
+    font-weight:800;
+    color:#ff9900;
+    letter-spacing:1px;
+  }
+
+  .btn{
+    width:100%;
+    padding: 14px 24px; 
+    margin:10px 0;
+    font-size:20px;
+    font-weight:700;
+    border-radius:12px;
+    background:linear-gradient(180deg,#ffb84d,#ff9900);
+    border:none;
+    cursor:pointer;
+    transition:0.2s;
+    box-shadow:0 0 15px rgba(255,153,0,0.4);
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    box-sizing: border-box;    
+         
+  }
+  .btn:hover{
+    transform:scale(1.04);
+    box-shadow:0 0 25px rgba(255,153,0,0.7);
+  }

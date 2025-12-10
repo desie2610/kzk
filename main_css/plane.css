@@ -1,0 +1,113 @@
+.back {
+    position: absolute;
+    left: 20px;
+    padding: 12px 18px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 12px;
+    border: none;
+    color: #ff9900;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+body {
+  margin:0;
+  font-family: Inter, sans-serif;
+  background: linear-gradient(180deg,#0d0d12,#131421,#0a0a0f);
+  color: white;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  min-height:100vh;
+  padding-top:20px;
+}
+
+.container {
+  width:200px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding:20px;
+  text-align:center;
+}
+
+h1 { 
+  color:#ff9900; 
+  margin-bottom:20px;
+}
+
+.balance-row, .bet-row {
+  margin: 10px 0;
+  font-weight:700;
+}
+
+#betInput {
+  padding:6px 8px;
+  width:100px;
+  border-radius:6px;
+  border:none;
+  outline:none;
+}
+
+button {
+  padding:6px 10px;
+  border:none;
+  border-radius:6px;
+  background:#ff9900;
+  color:#000;
+  font-weight:700;
+  cursor:pointer;
+  margin-left:5px;
+}
+
+#planeField {
+  margin:20px 0;
+  width:100px;
+  height:400px;
+  background: rgba(255,255,255,0.1);
+  border-radius:8px;
+  position: relative;
+  overflow:hidden;
+}
+
+#progressBar {
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:0;
+  background: linear-gradient(to top,#ff9900,#ffb84d);
+  border-radius: 8px;
+  z-index:1;
+  transition: height 0.1s linear;
+}
+
+#plane {
+  position: absolute;
+  top:0;
+  left:50%;
+  transform: translateX(-50%);
+  font-size:30px;
+  z-index:2;
+  transition: top 0.1s linear;
+}
+
+#explosion {
+  position:absolute;
+  font-size:30px;
+  display:none;
+  top:0;
+  left:50%;
+  transform: translateX(-50%);
+  z-index:3;
+}
+
+#multiplier {
+  font-size:18px;
+  margin:10px 0;
+  transition: all 0.1s ease;
+}
+
+#message {
+  margin-top:10px;
+  min-height:22px;
+  font-size:14px;
+}

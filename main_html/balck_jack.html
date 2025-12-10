@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Blackjack</title>
+  <link rel="stylesheet" href="../main_css/balck_jack.css">
+</head>
+<body>
+
+        <button class="backs" onclick="location.href='babki.html'">← Назад</button>
+
+<div class="bj-container">
+    <h1>🂡 BlackJack</h1>
+
+    <div class="balance-row">
+      Баланс: <span id="balance">0</span> грн
+    </div>
+
+    <div class="bet-row">
+      <input id="betInput" type="number" min="1" placeholder="Ставка (грн)" />
+      <button id="betBtn">Поставить</button>
+    </div>
+
+    <div class="section">
+        <h2>Дилер:</h2>
+        <div id="dealerCards" class="cards"></div>
+        <div id="dealerScore"></div>
+    </div>
+
+    <div class="section">
+        <h2>Ты:</h2>
+        <div id="playerCards" class="cards"></div>
+        <div id="playerScore"></div>
+    </div>
+
+    <div class="controls">
+        <button id="btnStart" disabled>Начать игру</button>
+        <button id="btnHit" disabled>Взять карту</button>
+        <button id="btnStand" disabled>Хватит</button>
+    </div>
+
+    <div id="message"></div>
+</div>
+
+<!-- подключаем модуль JS -->
+<script type="module" src="../main_js/balck_jack.js"></script>
+</body>
+</html>

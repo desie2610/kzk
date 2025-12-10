@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+    font-family: Inter, sans-serif;
+    background: linear-gradient(180deg,#0d0d12,#131421,#0a0a0f);
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.back {
+    position: absolute;
+    left: 20px;
+    padding: 12px 18px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 12px;
+    border: none;
+    color: #ff9900;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+
+.container {
+    background: rgba(255,255,255,0.05);
+    padding: 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 25px rgba(255,145,0,0.3);
+    width: 400px;
+}
+
+h1 {
+    color: #ff9900;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 80%;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+#promoBtn {
+    padding: 14px 28px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 12px;
+    border: none;
+    background: linear-gradient(180deg,#ffb84d,#ff9900);
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(255,153,0,0.4);
+    transition: 0.2s;
+}
+
+#promoBtn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(255,153,0,0.7);
+}
+
+.message {
+    margin-top: 15px;
+    font-size: 1.2rem;
+}

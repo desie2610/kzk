@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Минёр — ставки</title>
+    <link rel="stylesheet" href="../main_css/miner.css">
+</head>
+<body>
+
+<div class="header">
+    <button class="back" onclick="location.href='babki.html'">← Назад</button>
+    <h1>💣 Минёр Ставки</h1>
+</div>
+
+<div class="balance-box">
+    Баланс: <span id="balance">0</span> грн
+</div>
+
+<div class="menu">
+    <label>Ставка: <input type="number" id="bet" min="1" value="10"></label>
+    <button class="mode" data-mines="3">3 мины (1.1х)</button>
+    <button class="mode" data-mines="5">5 мин (1.5х)</button>
+    <button class="mode" data-mines="10">10 мин (2.5х)</button>
+    <button id="stopBtn">🏁 Остановиться</button>
+</div>
+
+<div id="field" class="field"></div>
+
+<script type="module" src="../main_js/miner.js"></script>
+</body>
+</html>
