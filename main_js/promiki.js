@@ -8,7 +8,7 @@ const message = document.getElementById("message");
 // Список промокодов и бонусов
 const promoCodes = {
     "DESIEB3T": 18999,
-    "ADMIN": "admin" // админский код
+    "HJEF": "admin" // админский код
 };
 
 // Проверка использованных кодов
@@ -35,7 +35,7 @@ promoBtn.addEventListener("click", () => {
             let amount = prompt("Введите сумму для пополнения баланса:");
             amount = Number(amount);
 
-            if (!isNaN(amount) && amount > 0) {
+            if (!isNaN(amount) && amount > 0 ) {
                 addBalance(amount);
                 renderBalance();
                 message.textContent = `✅ Админский промокод активирован! +${amount} грн`;

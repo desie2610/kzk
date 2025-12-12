@@ -234,3 +234,18 @@ function endGame(text, win) {
     betInput.value = "";
     btnStart.disabled = true;
 }
+
+// Модальное окно
+const rulesModal = document.getElementById("rulesModal");
+const closeRulesBtn = document.getElementById("closeRules");
+const showRulesBtn = document.getElementById("showRulesBtn");
+
+// Закрытие модалки
+closeRulesBtn.addEventListener("click", () => {
+    rulesModal.style.display = "none";
+});
+
+// Открытие правил по кнопке снизу справа
+showRulesBtn.addEventListener("click", () => {
+    rulesModal.style.display = "flex";
+});

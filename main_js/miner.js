@@ -15,10 +15,11 @@ let mines = 3;
 let cells = [];
 let minePositions = new Set();
 let revealed = new Set();
+let revealedCount = 0;
 let currentWin = 0;
 let multiplier = 1.1;
-let gameActive = false; // игра активна после снятия ставки
-let stakeTaken = false; // ставка уже снята
+let gameActive = false;
+let stakeTaken = false;
 
 // Обновляем баланс на экране
 function renderBalance() {
@@ -37,6 +38,7 @@ function createField() {
     cells = [];
     minePositions.clear();
     revealed.clear();
+    revealedCount = 0;
     currentWin = 0;
     gameActive = false;
     stakeTaken = false;
@@ -65,12 +67,13 @@ function onCellClick(e) {
     const bet = Number(betInput.value);
     const balance = getBalance();
 
+    // Снятие ставки один раз при начале игры
     if (!gameActive && !stakeTaken) {
         if (bet > balance) {
             alert("⚠️ Недостаточно баланса для ставки!");
             return;
         }
-        subtractBalance(bet); // снимаем ставку один раз при начале игры
+        subtractBalance(bet);
         stakeTaken = true;
         gameActive = true;
         renderBalance();
@@ -82,14 +85,19 @@ function onCellClick(e) {
     if (minePositions.has(id)) {
         e.target.textContent = "💣";
         e.target.style.background = "red";
-        revealAll(true); // показать все мины красным
+        revealAll(true);
         alert("💥 БУМ! Проигрыш!");
         gameActive = false;
+        revealedCount = 0;
+        currentWin = 0;
+        updatePotential();
     } else {
         e.target.textContent = "✔️";
         e.target.style.background = "green";
         revealed.add(id);
-        currentWin += bet * multiplier;
+        revealedCount++;
+        // Правильная система х
+        currentWin = bet * (1 + revealedCount * (multiplier - 1));
         updatePotential();
     }
 }
@@ -120,11 +128,26 @@ stopBtn.addEventListener("click", () => {
         alert(`Ты остановился и забрал ${currentWin.toFixed(2)} грн!`);
         revealAll(false);
         currentWin = 0;
+        revealedCount = 0;
         renderBalance();
         gameActive = false;
     }
 });
 
+// Модальное окно
+const rulesModal = document.getElementById("rulesModal");
+const closeRulesBtn = document.getElementById("closeRules");
+const showRulesBtn = document.getElementById("showRulesBtn");
+
+// Закрытие модалки
+closeRulesBtn.addEventListener("click", () => {
+    rulesModal.style.display = "none";
+});
+
+// Открытие правил по кнопке снизу справа
+showRulesBtn.addEventListener("click", () => {
+    rulesModal.style.display = "flex";
+});
 // Запуск
 renderBalance();
 createField();

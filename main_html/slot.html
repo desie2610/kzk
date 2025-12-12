@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Слоты — Rizhiy.bet</title>
+    <link rel="stylesheet" href="../main_css/slot.css">
+</head>
+<body>
+
+<div class="header">
+    <button class="back" onclick="location.href='../index.html'">← Назад</button>
+    <h1>🎰 Слоты</h1>
+</div>
+
+<div class="balance-box">
+    Баланс: <span id="balance">0</span> грн
+</div>
+
+<div class="controls">
+    <label>Ставка: <input type="number" id="bet" min="1" value="10"></label>
+    <button id="spinBtn">💥 Крутить</button>
+</div>
+
+<div id="slotsField" class="slots-field"></div>
+<div id="potentialWin" class="potential-win"></div>
+
+<script type="module" src="../main_js/slot.js"></script>
+</body>
+</html>
